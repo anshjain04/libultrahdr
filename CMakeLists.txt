@@ -757,6 +757,8 @@ endif()
 target_link_libraries(${UHDR_TARGET_NAME} PRIVATE ${PRIVATE_LINK_LIBS})
 set_target_properties(${UHDR_TARGET_NAME}
                       PROPERTIES PUBLIC_HEADER ultrahdr_api.h)
+target_include_directories(${UHDR_TARGET_NAME} PUBLIC ${EXPORT_INCLUDE_DIR})
+# target_link_libraries(PUBLIC ${UHDR_CORE_LIB_NAME} PRIVATE ${IMAGEIO_TARGET_NAME})
 if(BUILD_SHARED_LIBS)
   # If target is STATIC no need to set VERSION and SOVERSION
   set_target_properties(${UHDR_TARGET_NAME}
